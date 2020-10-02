@@ -1,23 +1,18 @@
-
+// from data.js
 var tableData = data;
+
 // Get a reference to the table body
  var tbody = d3.select("tbody");
- /// Step 1: Loop Through `data` and console.log each weather report object
-// data.forEach(function(weatherReport) {
-//   console.log(weatherReport);
-// });
+ ///  Loop Through `data` and console.log each UFO sighting report object
 
-// // Step 2:  Use d3 to append one table row `tr` for each weather report object
-// // Don't worry about adding cells or text yet, just try appending the `tr` elements.
 tableData.forEach(function(ufoReport) {
  console.log(ufoReport);
+
+//  Append one table row `tr` for each UFO sighting  report object
  var row = tbody.append("tr");
 
+// // Use object.entries to consolle.log eachh ufo sighting
 
-// // Step 4: Use d3 to append 1 cell per weather report value (weekday, date, high, low)
-// data.forEach(function(weatherReport) {
-//   console.log(weatherReport);
-//   var row = tbody.append("tr");
 Object.entries(ufoReport).forEach(function([key, value]) {
         console.log(key, value);
 //Append a cell to the tabledata for each value in the UFO sighting  report object
@@ -26,11 +21,13 @@ Object.entries(ufoReport).forEach(function([key, value]) {
   });
 });
 
+
 //  Getting a reference to the button on the page with the id property set to `click-me`
   var button = d3.select("#filter-btn");
 
 // Create event handlers for clicking the button
     button.on("click", function() {
+
 // prevent page from refreshing
     d3.event.preventDefault();
 // Select the input element and get the raw HTML node
